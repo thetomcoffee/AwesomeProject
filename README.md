@@ -7,3 +7,5 @@ In setting up this project I used the tutorials at:
 [Setting up the development environment - React Native](https://reactnative.dev/docs/next/environment-setup)
 
 [Installation - Expo Documentation](https://docs.expo.io/get-started/installation/)
+
+[Create a new app - Expo Documentation](https://docs.expo.io/get-started/create-a-new-app/)
