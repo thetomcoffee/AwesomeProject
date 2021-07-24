@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, View, Text, TextInput } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Text, TextInput, Image, Button } from 'react-native';
 
 const App = () => {
   const [currentDate, setCurrentDate] = useState('');
@@ -37,6 +37,8 @@ const App = () => {
     );
   }, []);
 
+  const [isPressed, setIsPressed] = useState(true);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -58,7 +60,24 @@ const App = () => {
         }}
         defaultValue="Name"
         />
+        <Text>Here's an image of a cat for no reason:</Text>
+        <Image
+        source={{uri: "https://reactnative.dev/docs/assets/p_cat1.png"}}
+        style={{width: 200, height: 200}}
+        />
       </View>
+
+      <Text>
+        Has the button been pressed? { isPressed ? "No!" : "Yes!" }
+      </Text>
+      <Button
+        onPress={() => {
+          setIsPressed(false);
+        }}
+        disabled={!isPressed}
+        title={isPressed ? "Press this button, please!" : "Thank you!"}
+      />
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
